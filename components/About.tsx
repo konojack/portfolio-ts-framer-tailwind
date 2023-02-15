@@ -41,7 +41,7 @@ const About = (props: Props) => {
           I am a Front End Developer with 6 years of experience. The last years
           of my work was an adventure related to the creation of the frontend
           layer of large commercial betting websites used by hundreds of
-          thousands of people. I really like to develop and learn new
+          thousands of people. I really like to develop and learn new skills and
           technologies, especially in this industry where development and
           learning should come first.
         </p>
