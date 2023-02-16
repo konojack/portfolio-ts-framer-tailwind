@@ -1,9 +1,23 @@
 import React from 'react';
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 type Props = {};
 
+type Inputs = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
 const ContactMe = (props: Props) => {
+  const { register, handleSubmit } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    window.location.href = `mailto:konojack@gmail.com?subject=${formData.subject}&body=My name is ${formData.name} and my email is ${formData.email}: ${formData.message}`;
+  };
+
   return (
     <div className="h-screen relative flex flex-col items-center justify-evenly text-center mx-auto md:text-left md:flex-row max-w-7xl px-10 ">
       <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -31,14 +45,39 @@ const ContactMe = (props: Props) => {
           </div>
         </div>
 
-        <form className="flex flex-col space-y-2 w-fit mx-auto">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col space-y-2 w-fit mx-auto"
+        >
           <div className="flex space-x-2">
-            <input placeholder="Name" className="contactInput" type="text" />
-            <input placeholder="Email" className="contactInput" type="text" />
+            <input
+              placeholder="Name"
+              className="contactInput"
+              type="text"
+              {...register('name')}
+            />
+            <input
+              placeholder="Email"
+              className="contactInput"
+              type="text"
+              {...register('email')}
+            />
           </div>
-          <input placeholder="Subject" className="contactInput" type="text" />
-          <textarea placeholder="Message" className="contactInput" />
-          <button className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg">
+          <input
+            placeholder="Subject"
+            className="contactInput"
+            type="text"
+            {...register('subject')}
+          />
+          <textarea
+            placeholder="Message"
+            className="contactInput"
+            {...register('message')}
+          />
+          <button
+            type="submit"
+            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg"
+          >
             Submit
           </button>
         </form>
