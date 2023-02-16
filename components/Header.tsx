@@ -40,7 +40,8 @@ const Header = (props: Props) => {
           bgColor="transparent"
         />
       </motion.div>
-      <Link href="#contact">
+
+      <Link href="#contact" passHref legacyBehavior>
         <motion.div
           initial={{
             x: 500,
