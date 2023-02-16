@@ -25,7 +25,7 @@ type Props = {
   socials: Social[];
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();

@@ -26,7 +26,7 @@ const ExperienceCard = ({ experience }: Props) => {
         <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
         <p className="font-bold text-2xl mt-1">{experience?.company}</p>
         <div className="flex space-x-2 my-2">
-          {experience?.technologies.map((technology) => (
+          {experience?.technologies?.map((technology) => (
             <motion.img
               key={technology._id}
               className="h-10 w-10 rounded-xl"
@@ -42,7 +42,7 @@ const ExperienceCard = ({ experience }: Props) => {
             : new Date(experience?.dateEnded).toDateString()}
         </p>
         <ul className="list-disc space-y-4 ml-5 text-base">
-          {experience?.points.map((point, i) => (
+          {experience?.points?.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
         </ul>
