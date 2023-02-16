@@ -7,10 +7,6 @@ export const fetchProjects = async () => {
 
   const data = await res.json();
   const projects: Project[] = data.projects;
-  console.log(
-    '🚀 ~ file: fetchProjects.ts:8 ~ fetchProjects ~ projects',
-    projects
-  );
 
   return projects;
 };

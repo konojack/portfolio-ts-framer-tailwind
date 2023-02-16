@@ -20,8 +20,8 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'sumary',
-      title: 'Sumary',
+      name: 'summary',
+      title: 'Summary',
       type: 'text',
     }),
     defineField({

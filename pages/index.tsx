@@ -5,8 +5,9 @@ import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import WorkExperience from '@/components/WorkExperience';
+import { urlFor } from '@/lib/sanity';
 import { Experience, PageInfo, Project, Skill, Social } from '@/typings';
-import { fetchExperiences } from '@/utils/fetchExperience';
+import { fetchExperiences } from '@/utils/fetchExperiences';
 import { fetchPageInfo } from '@/utils/fetchPageInfo';
 import { fetchProjects } from '@/utils/fetchProjects';
 import { fetchSkills } from '@/utils/fetchSkills';
@@ -37,23 +38,23 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       <Header socials={socials} />
 
       <section id="hero" className="snap-start">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
 
       <section id="about" className="snap-center">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
 
       <section id="experience" className="snap-center">
-        <WorkExperience />
+        <WorkExperience experiences={experiences} />
       </section>
 
       <section id="skills" className="snap-start">
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       <section id="contact" className="snap-start">
@@ -64,7 +65,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <Image
-              src="https://media.licdn.com/dms/image/C4E03AQF8U7FGwMNPaQ/profile-displayphoto-shrink_800_800/0/1607675311873?e=1681948800&v=beta&t=sBTk0jt1huaYJbmTw8eZmUhj4OqnzlXVKhj-eyxjGvI"
+              src={urlFor(pageInfo?.heroImage).url()}
               className="rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
               alt="avatar"
               width="60"
@@ -85,6 +86,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
+
   return {
     props: {
       pageInfo,

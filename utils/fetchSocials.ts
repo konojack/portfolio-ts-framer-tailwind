@@ -5,7 +5,6 @@ export const fetchSocials = async () => {
 
   const data = await res.json();
   const socials: Social[] = data.socials;
-  console.log('🚀 ~ file: fetchSocials.ts:8 ~ fetchSocials ~ socials', socials);
 
   return socials;
 };

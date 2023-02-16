@@ -5,7 +5,7 @@ const nextConfig = {
   //   domains: ['media.licdn.com'],
   // },
   images: {
-    domains: ['media.licdn.com'],
+    domains: ['media.licdn.com', 'cdn.sanity.io'],
   },
 };
 

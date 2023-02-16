@@ -5,7 +5,6 @@ export const fetchSkills = async () => {
 
   const data = await res.json();
   const skills: Skill[] = data.skills;
-  console.log('🚀 ~ file: fetchSkills.ts:8 ~ fetchSkills ~ skills', skills);
 
   return skills;
 };

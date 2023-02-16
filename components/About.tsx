@@ -1,9 +1,13 @@
+import { urlFor } from '@/lib/sanity';
+import { PageInfo } from '@/typings';
 import { motion } from 'framer-motion';
 import React from 'react';
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
   return (
     <motion.div
       initial={{
@@ -19,7 +23,7 @@ const About = (props: Props) => {
         About
       </h3>
       <motion.img
-        src="https://i.ibb.co/XSFSmdz/dawdel.png"
+        src={urlFor(pageInfo?.profilePic).url()}
         initial={{
           x: -200,
           opacity: 0,
@@ -37,14 +41,7 @@ const About = (props: Props) => {
           <span className="underline decoration-yellow-300/50">little</span>{' '}
           background
         </h4>
-        <p className="text-base">
-          I am a Front End Developer with 6 years of experience. The last years
-          of my work was an adventure related to the creation of the frontend
-          layer of large commercial betting websites used by hundreds of
-          thousands of people. I really like to develop and learn new skills and
-          technologies, especially in this industry where development and
-          learning should come first.
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );
