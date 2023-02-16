@@ -3,8 +3,6 @@ import { groq } from 'next-sanity';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Social } from '@/typings';
 
-sanityClient;
-
 const query = groq`*[_type == "social"]`;
 
 type Data = {

@@ -1,9 +1,7 @@
 import sanityClient from '../../lib/sanity';
 import { groq } from 'next-sanity';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { PageInfo, Project } from '@/typings';
-
-sanityClient;
+import { PageInfo } from '@/typings';
 
 const query = groq`*[_type == "pageInfo"][0]`;
 
