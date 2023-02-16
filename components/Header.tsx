@@ -1,11 +1,15 @@
+import social from '@/portfolio-tailwind-framer/schemas/social';
+import { Social } from '@/typings';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-const Header = (props: Props) => {
+const Header = ({ socials }: Props) => {
   return (
     <header className="sticky top-0 max-w-7xl mx-auto p-5 flex flex-wrap items-start justify-between xl:items-center z-20">
       <motion.div
@@ -24,21 +28,14 @@ const Header = (props: Props) => {
         }}
         className="flex flex-row items-center"
       >
-        <SocialIcon
-          url="https://facebook.com"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://twitter.com"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://linkedin.com"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
 
       <Link href="#contact" passHref legacyBehavior>
