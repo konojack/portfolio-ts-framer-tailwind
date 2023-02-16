@@ -12,6 +12,8 @@
 /.next/
 /out/
 
+portfolio-tailwind-framer/node_modules
+
 # production
 /build
 

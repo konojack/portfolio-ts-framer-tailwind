@@ -7,6 +7,8 @@ import Skills from '@/components/Skills';
 import WorkExperience from '@/components/WorkExperience';
 import { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
@@ -43,6 +45,20 @@ const Home: NextPage = () => {
       <section id="contact" className="snap-start">
         <ContactMe />
       </section>
+
+      <Link href="#hero">
+        <footer className="sticky bottom-5 w-full cursor-pointer">
+          <div className="flex items-center justify-center">
+            <Image
+              src="https://media.licdn.com/dms/image/C4E03AQF8U7FGwMNPaQ/profile-displayphoto-shrink_800_800/0/1607675311873?e=1681948800&v=beta&t=sBTk0jt1huaYJbmTw8eZmUhj4OqnzlXVKhj-eyxjGvI"
+              className="rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+              alt="avatar"
+              width="60"
+              height="60"
+            />
+          </div>
+        </footer>
+      </Link>
     </div>
   );
 };
