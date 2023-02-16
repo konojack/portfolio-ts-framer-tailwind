@@ -1,4 +1,3 @@
-import social from '@/portfolio-tailwind-framer/schemas/social';
 import { Social } from '@/typings';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
