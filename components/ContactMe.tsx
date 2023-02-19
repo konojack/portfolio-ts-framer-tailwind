@@ -1,5 +1,5 @@
 import React from 'react';
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import { EnvelopeIcon, LinkIcon, PhoneIcon } from '@heroicons/react/24/solid';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 type Props = {};
@@ -40,8 +40,16 @@ const ContactMe = (props: Props) => {
             <p className="text-2xl">konojack@gmail.com</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Remote - The Whole World</p>
+            <LinkIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <p className="text-2xl">
+              <a
+                target="_blank"
+                href="https://github.com/konojack"
+                rel="noreferrer"
+              >
+                https://github.com/konojack
+              </a>
+            </p>
           </div>
         </div>
 

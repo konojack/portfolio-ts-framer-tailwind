@@ -7,7 +7,7 @@ const query = groq`
 *[_type == "experience"]{
   ...,
   technologies[]->
-} | order(dateStarted asc)
+} | order(dateStarted desc)
 `;
 
 type Data = {
