@@ -33,15 +33,17 @@ const About = ({ pageInfo }: Props) => {
         }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
-        className="mb-8 sm:mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] object-cover"
+        className="mb-8 sm:mb-20 md:mb-0 flex-shrink-0 w-40 h-40 sm:w-56 sm:h-56 rounded-full md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] object-cover"
       />
       <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">
+        <h4 className="text-2xl sm:text-4xl font-semibold">
           Here is a{' '}
           <span className="underline decoration-yellow-300/50">little</span>{' '}
           background
         </h4>
-        <p className="text-base">{pageInfo?.backgroundInformation}</p>
+        <p className="text-sm sm:text-base">
+          {pageInfo?.backgroundInformation}
+        </p>
       </div>
     </motion.div>
   );

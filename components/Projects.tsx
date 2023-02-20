@@ -25,47 +25,53 @@ const Projects = ({ projects }: Props) => {
 
       <div className="max-h-screen relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-thumb-[#f5ba3a]/80 scrollbar-track-gray-400/20">
         {projects?.map((project, i) => (
-          <motion.div
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+          <a
             key={i}
+            href={project.linkToBuild}
+            target="_blank"
+            rel="noreferrer"
           >
-            <motion.img
-              initial={{
-                y: -300,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 1,
-              }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              src={urlFor(project?.image).url()}
-              alt="project picture"
-              className="h-36 w-36"
-            />
+            <motion.div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
+              <motion.img
+                initial={{
+                  y: -100,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 1,
+                }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                src={urlFor(project?.image).url()}
+                alt="project picture"
+                className="h-20 w-20 sm:h-36 sm:w-36"
+              />
 
-            <div className="flex flex-col space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-3xl font-semibold text-center">
-                <span className="underline decoration-[#F7Ab0A]/50">
-                  Case study {i + 1} of {projects.length}
-                </span>
-                {': '}
-                {project?.title}
-              </h4>
+              <div className="flex flex-col space-y-5 sm:space-y-10 px-0 md:px-10 max-w-6xl">
+                <h4 className="text-xl sm:text-3xl font-semibold text-center">
+                  <span className="underline decoration-[#F7Ab0A]/50">
+                    Case study {i + 1} of {projects.length}
+                  </span>
+                  {': '}
+                  {project?.title}
+                </h4>
 
-              <div className="flex items-center space-x-2 justify-center">
-                {project?.technologies?.map((technology) => (
-                  <motion.img
-                    className="h-10 w-10 rounded-xl"
-                    key={technology._id}
-                    src={urlFor(technology?.image).url()}
-                    alt="technology image"
-                  />
-                ))}
+                <div className="flex items-center sm:space-x-2 justify-center">
+                  {project?.technologies?.map((technology) => (
+                    <motion.img
+                      className="h-10 w-10 rounded-xl"
+                      key={technology._id}
+                      src={urlFor(technology?.image).url()}
+                      alt="technology image"
+                    />
+                  ))}
+                </div>
+                <p className="text-sm sm:text-base text-center">
+                  {project?.summary}
+                </p>
               </div>
-              <p className="text-base text-center">{project?.summary}</p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </a>
         ))}
       </div>
 

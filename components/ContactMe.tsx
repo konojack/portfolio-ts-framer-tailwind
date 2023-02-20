@@ -25,23 +25,23 @@ const ContactMe = (props: Props) => {
       </h3>
 
       <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+        <h4 className="text-lg sm:text-4xl font-semibold text-center">
           I have got just what you need.{' '}
           <span className="decoration-[#F7AB0A]/50 underline">Lets Talk.</span>
         </h4>
 
         <div className="space-y-4">
           <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">+48 513 975 037</p>
+            <PhoneIcon className="text-[#F7AB0A] h-5 w-5 sm:h-7 sm:w-7 animate-pulse" />
+            <p className="text-lg sm:text-2xl">+48 513 975 037</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">konojack@gmail.com</p>
+            <EnvelopeIcon className="text-[#F7AB0A] h-5 w-5 sm:h-7 sm:w-7 animate-pulse" />
+            <p className="text-lg sm:text-2xl">konojack@gmail.com</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <LinkIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">
+            <LinkIcon className="text-[#F7AB0A] h-5 w-5 sm:h-7 sm:w-7 animate-pulse" />
+            <p className="text-lg sm:text-2xl">
               <a
                 target="_blank"
                 href="https://github.com/konojack"
@@ -57,7 +57,7 @@ const ContactMe = (props: Props) => {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 w-fit mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex sm:space-x-2 space-y-2 sm:space-y-0 flex-col sm:flex-row">
             <input
               placeholder="Name"
               className="contactInput"
